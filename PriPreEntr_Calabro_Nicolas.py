@@ -53,7 +53,10 @@ database = seeDataBase(flag=0) #read file for the first time: update the diction
 
 #---------------------------------Main---------------------------------
 while option != 4:
-    option = int(input("Menu: 1-Register  2-Log In  3-See Database  4-Exit "))
+    try:
+        option = int(input("Menu: 1-Register  2-Log In  3-See Database  4-Exit "))
+    except ValueError:     
+        print("You must enter a number")
     if option == 1:
         register()
     elif option == 2:
