@@ -1,6 +1,6 @@
 import json
 
-option = 0
+option = ""
 
 def register():
     username = input("Enter your username: ")
@@ -52,15 +52,12 @@ def seeDataBase(flag):
 database = seeDataBase(flag=0) #read file for the first time: update the dictionary with previous information or create an empty database
 
 #---------------------------------Main---------------------------------
-while option != 4:
-    try:
-        option = int(input("Menu: 1-Register  2-Log In  3-See Database  4-Exit "))
-    except ValueError:     
-        print("You must enter a number")
-    if option == 1:
+while option != "4":
+    option = input("Menu: 1-Register  2-Log In  3-See Database  4-Exit ")
+    if option == "1":
         register()
-    elif option == 2:
+    elif option == "2":
         login()
-    elif option == 3:
+    elif option == "3":
         database = seeDataBase(flag=1)    
 print("End")   
